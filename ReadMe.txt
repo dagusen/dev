@@ -12,6 +12,8 @@ Template inheritance 1:08:40
 
 Include Template Tag 1:22:42
 
+Reactivate Virtualenv 1:28:49
+
 
 
 
