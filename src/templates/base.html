@@ -3,7 +3,17 @@
 <head></head>
 	<body>
 		<h1>Hello World!</h1>
-		<p>This is {{ html_var }} coming through</p>
-		<p>This is a random number: {{ num }}</p>
+		<p>This is <code>{% verbatim %}{{ html_var }}{% endverbatim %}</code> coming through</p>
+		{% if num is not None %}
+		<p>Random number is: {{ num }}</p>
+		{% endif %}
+		{% for some_item in some_list %}
+			{% if some_item|divisibleby:"2" %}
+				Even number
+			{% endif %}
+			{{ some_item }}</br>
+			
+		{% endfor %}
+		<p>Some item is {{ some_item }}</p>
 	</body>
 </html>
