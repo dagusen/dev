@@ -4,6 +4,8 @@ Start app 41:00
 
 Rendering HTML 45:16
 
+Render a Django Template 50:03
+
 
 
 
