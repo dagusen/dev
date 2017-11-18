@@ -14,6 +14,11 @@ Include Template Tag 1:22:42
 
 Reactivate Virtualenv 1:28:49
 
+Class Based Views 1:30:03
+
+Template View 1:38:32
+
+
 
 
 
