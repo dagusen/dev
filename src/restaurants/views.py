@@ -31,13 +31,6 @@ class RestaurantListView(ListView):
 
 class RestaurantDetailView(DetailView):
 	queryset = RestaurantLocation.objects.all()
-
-	def get_context_data(self, *args, **kwargs):
-		print(self.kwargs)
-		context = super(RestaurantDetailView, self).get_context_data(*args,**kwargs)
-		print(context)
-		return context
-
 	def get_object(self, *args, **kwargs):
 		rest_id = self.kwargs.get('rest_id')
 		obj = get_object_or_404(RestaurantLocation, id=rest_id)# or pk = rest_id
