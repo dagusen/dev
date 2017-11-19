@@ -2,7 +2,7 @@ import random
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views import View
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView
 
 from .models import RestaurantLocation
 
@@ -15,3 +15,12 @@ def restaurant_listview(request):
 		"object_list": queryset
 	}
 	return render(request, template_name, context)
+
+class RestaurantListView(ListView):
+	queryset = RestaurantLocation.objects.all()
+
+class MexicanRestaurantListView(ListView):
+	queryset = RestaurantLocation.objects.filter(category__iexact='mexican')
+
+class AsianFusionRestaurantListView(ListView):
+	queryset = RestaurantLocation.objects.filter(category__iexact='asian fusion')
