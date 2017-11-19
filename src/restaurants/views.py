@@ -20,10 +20,10 @@ class RestaurantListView(ListView):
 	queryset = RestaurantLocation.objects.all()
 	template_name = 'restaurants/restaurant_list.html'
 
-class MexicanRestaurantListView(ListView):
-	queryset = RestaurantLocation.objects.filter(category__iexact='mexican')
+class SearchRestaurantListView(ListView):
 	template_name = 'restaurants/restaurant_list.html'
 
-class AsianFusionRestaurantListView(ListView):
-	queryset = RestaurantLocation.objects.filter(category__iexact='asian fusion')
-	template_name = 'restaurants/restaurant_list.html'
+	def get_queryset(self):
+		print(self.kwargs)
+		queryset = RestaurantLocation.objects.filter(category__iexact='mexican')
+		return queryset
