@@ -18,10 +18,70 @@ Class Based Views 1:30:03
 
 Template View 1:38:32
 
+Remembering Things with Models 1:46:05
+
+More on Model Fields 1:57:11
+
+Displaying Saved Data 2:06:12
+
+Understanding Querysets 2:16:03
+
+Generic List View 2:25:20
+
+------------------- Python Shell -------------------
+
+-import table from database
+from restaurants.models import RestaurantLocation
+
+-show all data from database
+RestaurantLocation.objects.all()
+
+-iterate data from database
+for obj in RestaurantLocation.objects.all():
+	print(obj.name)
+
+-making a qs and filter
+qs = RestaurantLocation.objects.all()
+qs.filter(category__iexact='mexican')
+
+-update data from database
+qs.update(category='American')
+qs
+qs.filter(category__iexact='mexican')
+
+
+-adding data in the database
+obj = RestaurantLocation()
+obj.name = "Pei Wei"
+obj.location = "Newport Beach"
+obj.category = "Asian Fusion"
+obj.save
+
+or
+
+obj = RestaurantLocation.objects.create(name='Chronic Tacos', location='Corona Del Mar', category='Mexican')
+obj
+obj.timestamp
+
+-show obj
+obj
+obj.name ...
+
+-showing qs
+qs2 = RestaurantLocation.objects.filter(category__iexact='mexican')
+qs2
+qs2.exists()
+qs2.count()
+
+-another qs exclude
+qs = RestaurantLocation.objects.filter(category__iexact='mexican').exclude(name__icontains='Tacos')
+qs
 
 
 
 
+
+-----------------------------------------------------------
 
 
 
