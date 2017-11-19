@@ -1,4 +1,4 @@
-import random
+from django.db.models import Q
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views import View
@@ -17,13 +17,14 @@ def restaurant_listview(request):
 	return render(request, template_name, context)
 
 class RestaurantListView(ListView):
-	queryset = RestaurantLocation.objects.all()
-	template_name = 'restaurants/restaurant_list.html'
-
-class SearchRestaurantListView(ListView):
-	template_name = 'restaurants/restaurant_list.html'
-
 	def get_queryset(self):
 		print(self.kwargs)
-		queryset = RestaurantLocation.objects.filter(category__iexact='mexican')
+		slug = self.kwargs.get("slug")
+		if slug:
+			queryset = RestaurantLocation.objects.filter(
+					Q(category__iexact=slug) |
+					Q(category__icontains=slug)
+				)
+		else:
+			queryset = RestaurantLocation.objects.all()
 		return queryset
