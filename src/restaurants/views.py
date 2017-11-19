@@ -18,9 +18,12 @@ def restaurant_listview(request):
 
 class RestaurantListView(ListView):
 	queryset = RestaurantLocation.objects.all()
+	template_name = 'restaurants/restaurant_list.html'
 
 class MexicanRestaurantListView(ListView):
 	queryset = RestaurantLocation.objects.filter(category__iexact='mexican')
+	template_name = 'restaurants/restaurant_list.html'
 
 class AsianFusionRestaurantListView(ListView):
 	queryset = RestaurantLocation.objects.filter(category__iexact='asian fusion')
+	template_name = 'restaurants/restaurant_list.html'
