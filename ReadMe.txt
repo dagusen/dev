@@ -28,6 +28,8 @@ Understanding Querysets 2:16:03
 
 Generic List View 2:25:20
 
+Restaurant Profile Detail 2:34:21
+
 ------------------- Python Shell -------------------
 
 -import table from database
