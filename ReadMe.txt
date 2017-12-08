@@ -30,6 +30,12 @@ Generic List View 2:25:20
 
 Restaurant Profile Detail 2:34:21
 
+SlugField & the Unique Slug Generator 2:44:39
+
+Signal for Unique Slugs 2:51:44
+
+Slugs as URL Params 2:58:23
+
 ------------------- Python Shell -------------------
 
 -import table from database
@@ -79,6 +85,11 @@ qs2.count()
 qs = RestaurantLocation.objects.filter(category__iexact='mexican').exclude(name__icontains='Tacos')
 qs
 
+-slug
+from restaurants.models import RestaurantLocation
+obj = RestaurantLocation.objects.get(id=1)
+from restaurants.utils import unique_slug_generator
+print(unique_slug_generator(obj))
 
 
 
