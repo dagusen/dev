@@ -36,6 +36,8 @@ Signal for Unique Slugs 2:51:44
 
 Slugs as URL Params 2:58:23
 
+Get single Items from the database 3:00:48
+
 ------------------- Python Shell -------------------
 
 -import table from database
