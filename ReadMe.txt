@@ -42,6 +42,7 @@ Saving Data the Hard + Wrong Way 3:12:09
 
 The Power of Django Forms 3:30:51
 
+The Extra Power of Django Model Forms 3:40:00
 
 
 ------------------- Python Shell -------------------
