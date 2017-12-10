@@ -40,6 +40,8 @@ Get single Items from the database 3:00:48
 
 Saving Data the Hard + Wrong Way 3:12:09
 
+The Power of Django Forms 3:30:51
+
 
 
 ------------------- Python Shell -------------------
