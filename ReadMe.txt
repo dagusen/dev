@@ -38,6 +38,10 @@ Slugs as URL Params 2:58:23
 
 Get single Items from the database 3:00:48
 
+Saving Data the Hard + Wrong Way 3:12:09
+
+
+
 ------------------- Python Shell -------------------
 
 -import table from database
@@ -93,6 +97,32 @@ obj = RestaurantLocation.objects.get(id=1)
 from restaurants.utils import unique_slug_generator
 print(unique_slug_generator(obj))
 
+
+-Get single Items from the database
+from restaurants.models import RestaurantLocation
+qs = RestaurantLocation.objects.all()
+qs
+qs.first()
+qs.last()
+qs.[position of the data]
+qs = RestaurantLocation.objects.filter(category__iexact='mexican')
+qs.first()
+qs.last()
+
+from django.shortcuts import get_object_or_404
+obj = RestaurantLocation.objects.get(pk=12000)
+
+exception
+
+try:
+	obj = RestaurantLocation.objects.get(pk=12000)
+except:
+	print("Not found")
+
+
+qs = RestaurantLocation.objects.filter(slug='baja-fist-tacos')
+if qs.exists():
+	print(qs.first())
 
 
 

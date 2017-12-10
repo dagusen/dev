@@ -1,12 +1,34 @@
 from django.db.models import Q
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.views import View
 from django.views.generic import TemplateView, ListView, DetailView
 
 from .models import RestaurantLocation
 
+from .forms import RestaurantCreateForm
+
 # Create your views here.
+
+def restaurant_createview(request):
+	print(request.GET)
+	print(request.POST)
+	if request.method == "GET":
+		print("get data")
+	if request.method == "POST":
+		# print("post data")
+		title = request.POST.get("title") # request.POST["title"]
+		location = request.POST.get("location")
+		category = request.POST.get("category")
+		obj = RestaurantLocation.objects.create(
+				name = title,
+				location = location,
+				category = category,
+			)
+		return HttpResponseRedirect("/restaurants/")
+	template_name = 'restaurants/form.html'
+	context = {}
+	return render(request, template_name, context)
 
 def restaurant_listview(request):
 	template_name = 'restaurants/restaurant_list.html'
