@@ -44,6 +44,8 @@ The Power of Django Forms 3:30:51
 
 The Extra Power of Django Model Forms 3:40:00
 
+Simple + Effective Validation 3:47:37
+
 
 ------------------- Python Shell -------------------
 

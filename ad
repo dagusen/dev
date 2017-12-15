@@ -1,0 +1,30 @@
+[33m954c5ac[m HEAD@{0}: commit: The Extra Power of Django Model Forms 2
+[33m07bf746[m HEAD@{1}: commit: The Power of Django Forms 1
+[33mefccd95[m HEAD@{2}: commit: The Power of Django Forms
+[33m2b58e29[m HEAD@{3}: commit: Saving Data the Hard + Wrong Way
+[33m650f9bc[m HEAD@{4}: commit: Get single Items from the database
+[33ma4702e9[m HEAD@{5}: commit: Slugs as URL Params
+[33mc113ae8[m HEAD@{6}: commit: Signal for Unique Slugs
+[33mb604d39[m HEAD@{7}: commit: SlugField & the Unique Slug Generator
+[33mabf81b5[m HEAD@{8}: commit: Restaurant Profile Detail | rest_id
+[33m5a34b28[m HEAD@{9}: commit: Restaurant Profile Detail | rest_id
+[33mf73ec15[m HEAD@{10}: commit: Restaurant Profile Detail
+[33m40ba554[m HEAD@{11}: commit: Generic List View | with search queryset in views.py 1
+[33m7267efb[m HEAD@{12}: commit: Generic List View | with search queryset in views.py
+[33m4b70e33[m HEAD@{13}: commit: Generic List View 1
+[33m3f42b3d[m HEAD@{14}: commit: Generic List View
+[33med44b81[m HEAD@{15}: commit: UnderStanding Querysets 1
+[33m8be89a5[m HEAD@{16}: commit: Understanding Querysets
+[33mc9e30f9[m HEAD@{17}: commit: Displaying Saved Data
+[33m6c7c819[m HEAD@{18}: commit: More on Model Fields
+[33m3deaa6f[m HEAD@{19}: commit: Remembering Things with Models
+[33m34cd9c2[m HEAD@{20}: commit: Template View
+[33m7a5c4eb[m HEAD@{21}: commit: Class Based Views
+[33m1cb4e74[m HEAD@{22}: commit: Include Template Tag
+[33m7275919[m HEAD@{23}: commit: Template inheritance
+[33m9500c14[m HEAD@{24}: commit: Context in Django Templates
+[33m756f3ed[m HEAD@{25}: commit: Render a Django Template
+[33m473a845[m HEAD@{26}: commit: Rendering HTML
+[33m740a583[m HEAD@{27}: commit: created a function based view
+[33m3fc03c5[m HEAD@{28}: commit: starting a app
+[33m1486d35[m HEAD@{29}: commit (initial): first commit

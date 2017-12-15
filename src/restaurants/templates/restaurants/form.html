@@ -3,8 +3,8 @@
 
 {% block head_title %}Add Restaurant | {{ block.super }}{% endblock head_title %}
 
-{% if errors %}
-	{{ errors }}
+{% if form.errors %}
+	{{ form.errors }}
 {% endif %}
 
 {% block content %}
