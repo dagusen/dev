@@ -48,6 +48,10 @@ Simple + Effective Validation 3:47:37
 
 Letting Users Own Data 3:59:58
 
+Associate User to Form data in FBV 4:18:05
+
+
+
 ------------------- Python Shell -------------------
 
 -import table from database
@@ -129,6 +133,36 @@ except:
 qs = RestaurantLocation.objects.filter(slug='baja-fist-tacos')
 if qs.exists():
 	print(qs.first())
+
+View owners data | user model
+
+from django.contrib.auth import get_user_model
+User = get_user_model()
+User.objects.all()
+admin = User.objects.get(id=1)
+admin.username
+instance = admin
+instance
+instance.restaurantlocation_set.all()
+instance.restaurantlocation_set.filter(category__iexact='Mexican')
+
+from restaurant.models import RestaurantLocation
+RestaurantLocation.objects.filter(owner__id=1)
+RestaurantLocation.objects.filter(owner__username__iexact='admin')
+
+qs = RestaurantLocation.objects.filter(owner__username__iexact='admin')
+obj = qs.first()
+obj.owner
+User = obj.owner.__class__
+User
+User.objects.all() 
+admin = User.objects.all().first()
+admin = User.objects.all()
+new_qs = admin.restaurantlocation_set.all()
+new _obj = new_qs.first()
+new_obj
+RK = new_obj.__class__
+RK.objects.all()
 
 
 
