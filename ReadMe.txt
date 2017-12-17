@@ -58,6 +58,11 @@ Login View 4:34:20
 
 Using Reverse to Shortcut URL's 4:43:35
 
+Menu items App 4:56:51
+
+
+
+
 ------------------- Python Shell -------------------
 
 -import table from database
