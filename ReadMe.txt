@@ -50,6 +50,8 @@ Letting Users Own Data 3:59:58
 
 Associate User to Form data in FBV 4:18:05
 
+Associate User to Data in Class Based View 4:23:34
+
 
 
 ------------------- Python Shell -------------------
