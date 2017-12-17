@@ -52,7 +52,7 @@ Associate User to Form data in FBV 4:18:05
 
 Associate User to Data in Class Based View 4:23:34
 
-
+Login Required to View 4:28:17
 
 ------------------- Python Shell -------------------
 
