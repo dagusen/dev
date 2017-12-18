@@ -64,6 +64,8 @@ Menu Item Views 5:07:55
 
 Limiting Form Field to QuerySet 5:24:23
 
+Personalize Items 5:35:42
+
 
 ------------------- Python Shell -------------------
 

@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from django.shortcuts import render
 
@@ -16,15 +17,24 @@ class ItemDetailView(DetailView):
 	def get_queryset(self):
 		return Item.objects.filter(user=self.request.user)
 
-class ItemCreateView(CreateView):
+class ItemCreateView(LoginRequiredMixin, CreateView):
 	form_class = ItemForm
 	template_name = 'form.html'
 
+	#validating user
 	def form_valid(self, form):
 		obj = form.save(commit=False)
 		obj.user = self.request.user
 		return super(ItemCreateView, self).form_valid(form)
 
+	#for user checking if login of not
+	#giving data
+	def get_form_kwargs(self):
+		kwargs = super(ItemCreateView, self).get_form_kwargs()
+		kwargs['user'] = self.request.user
+		return kwargs
+
+	#filter user
 	def get_queryset(self):
 		return Item.objects.filter(user=self.request.user)
 
@@ -34,7 +44,7 @@ class ItemCreateView(CreateView):
 		context['title'] = 'Create Item'
 		return context
 
-class ItemUpdateView(UpdateView):
+class ItemUpdateView(LoginRequiredMixin, UpdateView):
 	form_class = ItemForm
 	template_name = 'form.html'
 	def get_queryset(self):
@@ -45,3 +55,10 @@ class ItemUpdateView(UpdateView):
 		context = super(ItemUpdateView, self).get_context_data(*args, **kwargs)
 		context['title'] = 'Update Item'
 		return context
+
+	#for user checking if login of not
+	#giving data
+	def get_form_kwargs(self):
+		kwargs = super(ItemUpdateView, self).get_form_kwargs()
+		kwargs['user'] = self.request.user
+		return kwargs
