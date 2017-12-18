@@ -1,17 +1,5 @@
 from django.conf.urls import url
 
-#login
-from django.contrib.auth.views import(
-    LoginView,
-    LogoutView,
-    PasswordResetView,
-    PasswordResetDoneView,
-    PasswordChangeView,
-    PasswordChangeDoneView,
-    PasswordResetConfirmView,
-    PasswordResetCompleteView,
-    )
-
 from .views import (
     restaurant_listview,
     RestaurantListView,
