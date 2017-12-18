@@ -78,6 +78,8 @@ Follow Button Form 6:53:31
 
 Following Home Page Feed 7:12:55
 
+Register View 7:28:12
+
 
 ------------------- Python Shell -------------------
 
