@@ -66,6 +66,10 @@ Limiting Form Field to QuerySet 5:24:23
 
 Personalize Items 5:35:42
 
+User Profile View 5:53:35
+
+Style Profile with Bootstrap 6:07:51
+
 
 ------------------- Python Shell -------------------
 
