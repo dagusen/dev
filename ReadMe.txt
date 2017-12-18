@@ -74,6 +74,8 @@ Adding a Robust Search 6:11:56
 
 Follow Users 6:33:28
 
+Follow Button Form 6:53:31
+
 
 ------------------- Python Shell -------------------
 
@@ -187,7 +189,17 @@ new_obj
 RK = new_obj.__class__
 RK.objects.all()
 
+Follow Users | getting data
 
+from django.contrib.auth import get_user_model
+User = get_user_model()
+User.objects.all()
+abc = User.objects.last()
+abc
+abc.profile
+abc.restaurantlocation_set.all()
+abc.profile.followers.all()
+abc.profile.following.all()
 
 -----------------------------------------------------------
 
