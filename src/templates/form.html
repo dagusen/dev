@@ -10,14 +10,7 @@
 {% block content %}
 <h1>{{ title }}</h1>
 
-<form method='POST'>{% csrf_token %}
-	{{ form.as_p }}
-	<button type='submit'>Save</button>
-</form>
-
-{% if form.instance %}
-<h1>{{ form.instance.name }}</h1>
-{% endif %}
+{% include 'snippets/form-snippet.html'%}
 
 {% endblock %}
 
