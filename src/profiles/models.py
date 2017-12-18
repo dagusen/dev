@@ -9,6 +9,18 @@ User = settings.AUTH_USER_MODEL
 
 # Create your models here.
 
+class ProfileManager(models.Manager):
+	def toggle_follow(self, request_user, username_to_toggle):
+		profile_ = Profile.objects.get(user__username__iexact=username_to_toggle)
+		user = request_user
+		is_following = False
+		if user in profile_.followers.all():
+			profile_.followers.remove(user)
+		else:
+			profile_.followers.add(user)
+			is_following = True
+		return profile_, is_following
+
 class Profile(models.Model):
 	user			= models.OneToOneField(User)
 	followers		= models.ManyToManyField(User, related_name='is_following', blank=True)
@@ -17,6 +29,7 @@ class Profile(models.Model):
 	timestamp		= models.DateTimeField(auto_now_add=True)
 	updated			= models.DateTimeField(auto_now=True)
 
+	objects	= ProfileManager()
 	def __str__(self):
 		return self.user.username
 
