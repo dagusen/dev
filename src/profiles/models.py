@@ -30,8 +30,13 @@ class Profile(models.Model):
 	updated			= models.DateTimeField(auto_now=True)
 
 	objects	= ProfileManager()
+	
 	def __str__(self):
 		return self.user.username
+
+	def send_activation_email(self):
+		print("Activation")
+		pass
 
 def post_save_user_receiver(sender, instance, created, *args, **kwargs):
 	if created:
@@ -43,4 +48,4 @@ def post_save_user_receiver(sender, instance, created, *args, **kwargs):
 		profile.followers.add(default_user_profile.user)
 		profile.followers.add(2)
 
-	post_save.connect(post_save_user_receiver, sender=User)
+post_save.connect(post_save_user_receiver, sender=User)
