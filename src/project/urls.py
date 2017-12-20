@@ -33,7 +33,7 @@ from django.contrib.auth.views import(
 from profiles.views import ProfileFollowToggle
 
 from menus.views import HomeView
-from profiles.views import RegisterView
+from profiles.views import RegisterView, activate_user_view
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -41,6 +41,8 @@ urlpatterns = [
     url(r'^items/', include('menus.urls', namespace='menus')),
     url(r'^u/', include('profiles.urls', namespace='profile')),
     url(r'^profile-follow/$', ProfileFollowToggle.as_view(), name='follow'),
+
+    url(r'^activate/(?P<code>[a-z0-9].*)/$', activate_user_view, name='activate'),
     
     url(r'^$', HomeView.as_view(), name='home'),
     url(r'^about/$', TemplateView.as_view(template_name='about.html'), name='about'),

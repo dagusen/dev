@@ -4,10 +4,8 @@ from __future__ import unicode_literals
 from django.conf import settings
 from django.db import models
 from django.db.models.signals import post_save
-
-from django.core.mail import send_mail
-
 from django.core.urlresolvers import reverse
+from django.core.mail import send_mail
 
 from .utils import code_generator
 
@@ -49,9 +47,9 @@ class Profile(models.Model):
 			path_ = reverse('activate', kwargs={"code": self.activation_key})
 			subject = 'Activate Account'
 			from_email = settings.DEFAULT_FROM_EMAIL
-			message = 'Activate your account here: %s'% self.path_
+			message = 'Activate your account here: %s'% path_
 			recipient_list = [self.user.email]
-			html_message = '<p>Activate your account here:</p> %s'% self.path_
+			html_message = '<p>Activate your account here:</p> %s'% path_
 			print(html_message)
 			#sent_mail = send_mail(subject, message, from_email, recipient_list, fail_silently=False, html_message=html_message)
 			sent_mail = False
