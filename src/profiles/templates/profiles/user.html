@@ -7,12 +7,14 @@
 <h1>{{ user.username }}</h1>
  <!-- follow -->
 <p>{% include 'profiles/snippet/follow_form.html' with username=user.username is_following=is_following %}</p>
+
+<p>following : {{ user.profile.followers.count }}</p>
+
 <!-- search -->
 <form class='form' method='GET' action='.'>
 	<input type='text' placeholder='Search..' name='q' value='{{ request.GET.q }}'>
 	<button class='btn btn-default' type='submit'>Search</button>
 </form>
-
 <hr/>
 {% if locations %}
 {% for rest in locations %}

@@ -7,9 +7,9 @@ from django.db.models.signals import post_save
 from django.core.urlresolvers import reverse
 from django.core.mail import send_mail
 
-from .utils import code_generator
-
 User = settings.AUTH_USER_MODEL
+
+from .utils import code_generator
 
 # Create your models here.
 

@@ -28,11 +28,11 @@ class Item(models.Model):
 	def __str__(self):
 		return self.name
 
-	def get_absolute_url(self):
-		return reverse('menus:detail', kwargs={'pk': self.pk})
-
 	class Meta:
 		ordering = ['-updated', '-timestamp']
+
+	def get_absolute_url(self):
+		return reverse('menus:detail', kwargs={'pk': self.pk})
 
 	def get_contents(self):
 		return self.contents.split(",")

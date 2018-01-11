@@ -33,6 +33,7 @@ from django.contrib.auth.views import(
 from profiles.views import ProfileFollowToggle
 
 from menus.views import HomeView
+
 from profiles.views import RegisterView, activate_user_view
 
 urlpatterns = [
@@ -49,7 +50,7 @@ urlpatterns = [
     url(r'^contact/$', TemplateView.as_view(template_name='contact.html'), name='contact'),
 
 
-     # login
+    # login
     url(r'^login/$', LoginView.as_view(), name='login'),
     url(r'^login/$', LoginView.as_view(template_name='registration/login.html'), name='login'),
     url(r'^logout/$', LogoutView.as_view(next_page=reverse_lazy('login')), name='logout'),
